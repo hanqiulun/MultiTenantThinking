@@ -1,11 +1,17 @@
-这篇文章是[https://docs.google.com/document/d/1jAcsC4sLgEV9__TdgJrMvPa3G73G62tFtMcKQgeIlHM/edit#heading=h.vdo51bg01eve](https://docs.google.com/document/d/1jAcsC4sLgEV9__TdgJrMvPa3G73G62tFtMcKQgeIlHM/edit#heading=h.vdo51bg01eve)的中文翻译版本。
+这篇文章是[Multi-tenant security/isolation configuration](https://docs.google.com/document/d/1jAcsC4sLgEV9__TdgJrMvPa3G73G62tFtMcKQgeIlHM/edit#heading=h.vdo51bg01eve)的中文翻译版本，主要讲述了如何建立一个成熟的、全方位的多租户体系。
 
 ### 介绍
 
 由于需要在创建集群时配置`大量策略对象`和`参数`以及`用户/租户/命名空间`何时更新，集群管理员目前很难知道如何设置和运行安全`多租户Kubernetes集群`添加到群集。
+
 为了帮助减少这种谜团，本文档提供了有关如何配置`Kubernetes`以实现`多租户`的建议。对今天可用功能集进行改进的想法明确超出了本文档的范围。
+
 对于“为多租户配置”而言，集群究竟意味着什么并不明确。
+
 一些集群管理员可能需要强大的`“控制平面多租户”`以支持许多用户，但不关心强大的`“节点多租户”`，因为他们只运行受信任的工作负载或愿意将工作负载隔离到专用节点上。
+
 其他人可能需要强大的`“节点多租户`”，因为他们运行不受信任的工作负载，但不关心`“控制平面多租户”`，因为实际上只有一个用户（例如，最终用户与Sauber控制平面交互，这是Kubernetes的唯一直接用户控制平面）。
+
 在某些情况下，可能需要将`节点的操作员`视为`租户`。在分散式环境中也是如此，其中节点运营商可能不为其他租户所知，因此必须假设不值得信任。其他人都想要两者。
+
 在本文中，我们假设两者都是期望的;如果您不需要其中一个，那么很容易找出可以忽略的选项。该文档描述了更全面的多租户模型分类。
