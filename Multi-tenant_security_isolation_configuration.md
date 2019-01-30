@@ -1,4 +1,4 @@
-这篇文章是[Multi-tenant security/isolation configuration](https://docs.google.com/document/d/1jAcsC4sLgEV9__TdgJrMvPa3G73G62tFtMcKQgeIlHM/edit#heading=h.vdo51bg01eve)的中文翻译版本，主要讲述了如何建立一个成熟的、全方位的多租户体系。
+:fu::fu::fu: 这篇文章是[Multi-tenant security/isolation configuration](https://docs.google.com/document/d/1jAcsC4sLgEV9__TdgJrMvPa3G73G62tFtMcKQgeIlHM/edit#heading=h.vdo51bg01eve)的中文翻译版本，主要讲述了如何建立一个成熟的、全方位的多租户体系。
 
 ### 介绍
 
